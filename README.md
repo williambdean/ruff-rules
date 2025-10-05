@@ -2,6 +2,11 @@
 
 These are the official [Ruff documentation](https://docs.astral.sh/ruff/rules/) saved as a CSV and JSON file.
 
+> [!TIP]
+>
+> You can also use `ruff rule --output-format json --all` to get the rules in
+> JSON format which might be more up-to-date.
+
 ## The Flat Files
 
 Each file contains a list of all the Ruff linting rules, with the following columns:
