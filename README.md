@@ -12,12 +12,18 @@ Each file contains a list of all the Ruff linting rules, with the following colu
 *   **Details:** Additional details or autofix availability for the rule.
 *   **ParentGroup**: The parent category of the rule. (e.g. `RUF` for Ruff rules)
 
-## Access the CSV
+## Access the Files
 
-Use the raw link to access the CSV file directly. That is: 
+Use the raw link github to access the file directly. For example, to download the CSV file:
 
 ```terminal
 curl https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.csv
+```
+
+Or access the JSON file:
+
+```terminal
+curl https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.json
 ```
 
 ## Scraping Script
