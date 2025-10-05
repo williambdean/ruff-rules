@@ -1,4 +1,4 @@
-Code,Name,Message,Details,Parent_Group
+Code,Name,Message,Details,ParentGroup
 AIR001,airflow-variable-name-task-id-mismatch,"Task variable name should match the task_id: ""{task_id}""",,AIR
 AIR002,airflow-dag-no-schedule-argument,DAG or @dag should have an explicit schedule argument,,AIR
 AIR301,airflow3-removal,{deprecated} is removed in Airflow 3.0,🛠️,AIR

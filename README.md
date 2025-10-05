@@ -1,16 +1,24 @@
-# Ruff Rules CSV
+# Ruff Rules
 
-These are the official [Ruff documentation](https://docs.astral.sh/ruff/rules/) saved as a CSV file.
+These are the official [Ruff documentation](https://docs.astral.sh/ruff/rules/) saved as a CSV and JSON file.
 
-## `ruff_rules.csv`
+## The Flat Files
 
-This file contains a list of all the Ruff linting rules, with the following columns:
+Each file contains a list of all the Ruff linting rules, with the following columns:
 
 *   **Code:** The rule's identifier code (e.g. `RUF001`).
 *   **Name:** The name of the rule.
 *   **Message:** A brief description of what the rule checks for.
 *   **Details:** Additional details or autofix availability for the rule.
-*   **Parent**: The parent category of the rule. (e.g. `RUF` for Ruff rules)
+*   **ParentGroup**: The parent category of the rule. (e.g. `RUF` for Ruff rules)
+
+## Access the CSV
+
+Use the raw link to access the CSV file directly. That is: 
+
+```terminal
+curl https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.csv
+```
 
 ## Scraping Script
 

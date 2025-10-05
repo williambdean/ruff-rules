@@ -9,12 +9,12 @@ import requests
 import pandas as pd
 
 url = "https://docs.astral.sh/ruff/rules/"
-result_file = "ruff_rules.csv"
+result_name = "ruff_rules"
 
 
 def derive_parent_group(df: pd.DataFrame) -> pd.DataFrame:
     """Derive the Parent_Group column from the Code column."""
-    return df.assign(Parent_Group=lambda df: df["Code"].str.extract(r"([A-Z_]+)")[0])
+    return df.assign(ParentGroup=lambda df: df["Code"].str.extract(r"([A-Z_]+)")[0])
 
 
 def scrape_rules() -> pd.DataFrame:
@@ -29,16 +29,15 @@ def scrape_rules() -> pd.DataFrame:
 
 
 def scrape_process_and_save_rules() -> None:
-    """Scrape the rules and save to a CSV file."""
-    (
+    """Scrape the rules and save to CSV and JSON files."""
+    processed = (
         scrape_rules()
         .rename(columns={"Unnamed: 3": "Details"})
         .pipe(derive_parent_group)
-        .to_csv(
-            result_file,
-            index=False,
-        )
     )
+
+    processed.to_csv(f"{result_name}.csv", index=False)
+    processed.to_json(f"{result_name}.json", orient="records", indent=2)
 
 
 if __name__ == "__main__":
