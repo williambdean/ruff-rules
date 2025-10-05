@@ -28,7 +28,7 @@ curl -s https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/mai
 
 ### Example: Filter Rules by Parent Group
 
-Use [jq](https://stedolan.github.io/jq/) to filter the JSON file by parent group. For example, to get all rules in the `RUF` parent group:
+Use [jq](https://jqlang.org/) to filter the JSON file by parent group. For example, to get all rules in the `RUF` parent group:
 
 ```terminal
 curl -s https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.json | jq 'map(select(.ParentGroup == "RUF"))'
