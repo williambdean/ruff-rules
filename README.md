@@ -17,13 +17,21 @@ Each file contains a list of all the Ruff linting rules, with the following colu
 Use the raw link github to access the file directly. For example, to download the CSV file:
 
 ```terminal
-curl https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.csv
+curl -s https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.csv
 ```
 
 Or access the JSON file:
 
 ```terminal
-curl https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.json
+curl -s https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.json
+```
+
+### Example: Filter Rules by Parent Group
+
+Use [jq](https://stedolan.github.io/jq/) to filter the JSON file by parent group. For example, to get all rules in the `RUF` parent group:
+
+```terminal
+curl -s https://raw.githubusercontent.com/williambdean/ruff-rules/refs/heads/main/ruff_rules.json | jq 'map(select(.ParentGroup == "RUF"))'
 ```
 
 ## Scraping Script
